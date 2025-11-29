@@ -321,7 +321,9 @@ export class SigninComponent implements OnInit {
         // this.localDbService.removeFromStorage('hpea');
         
         this.trackSignin(user)
-      
+        
+          console.log("EXIST_STORED_ROUTE:", this.EXIST_STORED_ROUTE);
+          console.log("storedRoute:", this.storedRoute);
 
         if (!this.EXIST_STORED_ROUTE) {
           this.router.navigate(['/projects']);

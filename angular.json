@@ -80,6 +80,15 @@
             ]
           },
           "configurations": {
+            "devAot": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false
+              },
             "production": {    
               "optimization": {
                 "scripts": true,
@@ -134,6 +143,9 @@
             "browserTarget": "chat21:build"
           },
           "configurations": {
+            "devAot": {
+              "browserTarget": "chat21:build:devAot"
+              },
             "production": {
               "browserTarget": "chat21:build:production"
             },
@@ -231,5 +243,8 @@
     "@schematics/angular:directive": {
       "prefix": "appdashboard"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

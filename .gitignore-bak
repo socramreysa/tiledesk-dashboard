@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Sensitive env (backup reference only; active rules in .gitignore)
+# (This is a backup of .gitignore at the time of modification)
+
 /src/environments/environment.prod.ts
 NOTES.md
 functions/*
@@ -50,13 +53,3 @@ Thumbs.db
 *.sublime-workspace
 
 /src/environments/env-locali
-
-
-# Environment files
-.env
-.env.*
-!.env.sample
-
-# Local Angular environment overrides (optional)
-src/environments/*.local.ts
-src/environments/*.private.ts

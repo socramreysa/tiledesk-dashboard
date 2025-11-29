@@ -33,6 +33,7 @@
   },
   "angularCompilerOptions": {
     "enableIvy": true,
-    "strictTemplates": false
+    "strictTemplates": false,
+    "skipLibCheck": true
   }
 }
