@@ -4,7 +4,7 @@ This repository is an Angular app. The Angular CLI `outputPath` is `dist` as def
 
 ## Dockerfile overview
 
-- Stage 1: `node:18-alpine` builds production artifacts using `npm run build -- --configuration=production`.
+- Stage 1: `node:16-alpine` builds production artifacts using `npm run build:prod`.
 - Stage 2: `nginx:alpine` serves the static files from `/usr/share/nginx/html` and copies local [nginx.conf](nginx.conf) for SPA routing.
 
 ## Build image
@@ -16,10 +16,10 @@ docker build -t marcos/tiledesk-dashboard:dev .
 ## Run container
 
 ```bash
-docker run --rm -p 8080:80 marcos/tiledesk-dashboard:dev
+docker run --rm -p 4500:80 marcos/tiledesk-dashboard:dev
 ```
 
-Then open http://localhost:8080
+Then open http://localhost:4500
 
 ## Notes
 

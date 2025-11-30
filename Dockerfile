@@ -1,16 +1,18 @@
 # ==== STAGE 1: Build ====
-FROM node:18-alpine AS build
+FROM node:16-alpine AS build
 
 # Set working directory
 WORKDIR /app
 
 # Install dependencies using lockfile when available
-COPY package*.json ./
-RUN npm ci
+#COPY package*.json ./
+# Use legacy peer deps to avoid Angular 14 peer conflicts during CI in container
+#RUN npm install --legacy-peer-deps
+#comentados para usar /node_modules ya existentes en el host
 
 # Copy source and build Angular app (production)
 COPY . .
-RUN npm run build -- --configuration=production
+RUN npm run build:prod
 
 # ==== STAGE 2: Nginx runtime ====
 FROM nginx:alpine
